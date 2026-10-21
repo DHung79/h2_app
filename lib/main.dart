@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'qr_generator_page.dart';
 import 'text_scanner_page.dart';
 
 void main() {
@@ -126,6 +127,17 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             icon: const Icon(Icons.document_scanner),
             label: const Text('Quét văn bản'),
+          ),
+          const SizedBox(height: 12),
+          FloatingActionButton.extended(
+            heroTag: 'qr',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const QrGeneratorPage()),
+              );
+            },
+            icon: const Icon(Icons.qr_code),
+            label: const Text('Tạo mã QR'),
           ),
           const SizedBox(height: 12),
           FloatingActionButton(
